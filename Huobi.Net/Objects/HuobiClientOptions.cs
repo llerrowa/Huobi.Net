@@ -40,7 +40,7 @@ namespace Huobi.Net.Objects
             set => _spotApiOptions = new RestApiClientOptions(_spotApiOptions, value);
         }
 
-        private readonly RestApiClientOptions _futuresCoinApiOptions = new RestApiClientOptions("https://api.hbdm.com/api")
+        private RestApiClientOptions _futuresCoinApiOptions = new RestApiClientOptions("https://api.hbdm.com/api")
         {
             RateLimiters = new List<IRateLimiter>
             {
@@ -55,10 +55,10 @@ namespace Huobi.Net.Objects
         public RestApiClientOptions FuturesCoinApiOptions
         {
             get => _futuresCoinApiOptions;
-            set => _futuresCoinApiOptions.Copy(_futuresCoinApiOptions, value);
+            set => _futuresCoinApiOptions = new RestApiClientOptions(_futuresCoinApiOptions, value);
         }
 
-        private readonly RestApiClientOptions _futuresUsdtApiOptions = new RestApiClientOptions("https://api.hbdm.com")
+        private RestApiClientOptions _futuresUsdtApiOptions = new RestApiClientOptions("https://api.hbdm.com")
         {
             RateLimiters = new List<IRateLimiter>
             {
@@ -73,10 +73,10 @@ namespace Huobi.Net.Objects
         public RestApiClientOptions FuturesUsdtApiOptions
         {
             get => _futuresUsdtApiOptions;
-            set => _futuresUsdtApiOptions.Copy(_futuresUsdtApiOptions, value);
+            set => _futuresUsdtApiOptions = new RestApiClientOptions(_futuresUsdtApiOptions, value);
         }
 
-        private readonly RestApiClientOptions _swapsCoinApiOptions = new RestApiClientOptions("https://api.hbdm.com")
+        private RestApiClientOptions _swapsCoinApiOptions = new RestApiClientOptions("https://api.hbdm.com")
         {
             RateLimiters = new List<IRateLimiter>
             {
@@ -91,7 +91,7 @@ namespace Huobi.Net.Objects
         public RestApiClientOptions SwapsCoinApiOptions
         {
             get => _swapsCoinApiOptions;
-            set => _swapsCoinApiOptions.Copy(_swapsCoinApiOptions, value);
+            set => _swapsCoinApiOptions = new RestApiClientOptions(_swapsCoinApiOptions, value);
         }
         /// <summary>
         /// ctor
@@ -112,8 +112,9 @@ namespace Huobi.Net.Objects
 
             SignPublicRequests = baseOn.SignPublicRequests;
             _spotApiOptions = new RestApiClientOptions(baseOn.SpotApiOptions, null);
-            input.FuturesUsdtApiOptions = new RestApiClientOptions(def.FuturesUsdtApiOptions);
-            input.SwapsCoinApiOptions = new RestApiClientOptions(def.SwapsCoinApiOptions);
+            _futuresCoinApiOptions = new RestApiClientOptions(baseOn.FuturesCoinApiOptions, null);
+            _futuresUsdtApiOptions = new RestApiClientOptions(baseOn.FuturesUsdtApiOptions, null);
+            _swapsCoinApiOptions = new RestApiClientOptions(baseOn.SwapsCoinApiOptions, null);
         }
     }
 
