@@ -1,9 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using CryptoExchange.Net;
+using CryptoExchange.Net.Interfaces;
 using CryptoExchange.Net.Objects;
 using Huobi.Net.Clients.FuturesApi;
 using Huobi.Net.Clients.SpotApi;
@@ -15,6 +17,11 @@ using Huobi.Net.Interfaces.Clients.SwapsApi;
 using Huobi.Net.Objects;
 using Huobi.Net.Objects.Internal;
 using Huobi.Net.Objects.Internal.Futures;
+using Huobi.Net.Clients.SpotApi;
+using Huobi.Net.Interfaces.Clients;
+using Huobi.Net.Interfaces.Clients.SpotApi;
+using Huobi.Net.Objects;
+using Huobi.Net.Objects.Internal;
 using Newtonsoft.Json.Linq;
 
 namespace Huobi.Net.Clients
@@ -114,7 +121,6 @@ namespace Huobi.Net.Clients
 
             return result.As(result.Data.Data);
         }
-
 
         /// <inheritdoc />
         protected override Task<ServerError?> TryParseErrorAsync(JToken data)

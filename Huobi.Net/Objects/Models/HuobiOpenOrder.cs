@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using CryptoExchange.Net.Converters;
 using Huobi.Net.Converters;
 using Huobi.Net.Enums;

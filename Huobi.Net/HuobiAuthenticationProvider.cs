@@ -1,5 +1,6 @@
 ﻿using CryptoExchange.Net;
 using CryptoExchange.Net.Authentication;
+using CryptoExchange.Net.Converters;
 using CryptoExchange.Net.Objects;
 using Huobi.Net.Objects.Internal;
 using System;

@@ -1,9 +1,10 @@
-using Huobi.Net.UnitTests.TestImplementations;
+﻿using Huobi.Net.UnitTests.TestImplementations;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Huobi.Net.Enums;
 using System.Reflection;
 using System.Diagnostics;
 using CryptoExchange.Net.Objects;
@@ -17,101 +18,13 @@ namespace Huobi.Net.UnitTests
     public class HuobiClientTests
     {
         [TestCase]
-        public async Task ReceivingErrorResponse_Should_FailCall_Spot()
+        public async Task ReceivingErrorResponse_Should_FailCall()
         {
             // arrange
             var client = TestHelpers.CreateAuthResponseClient("{{\"status\": \"error\", \"err-code\": \"Error!\", \"err-msg\": \"ErrorMessage\"}}");
 
             // act
             var result = await client.SpotApi.ExchangeData.GetAssetsAsync();
-
-            // assert
-            Assert.IsFalse(result.Success);
-            Assert.IsTrue(result.Error.ToString().Contains("Error!"));
-            Assert.IsTrue(result.Error.ToString().Contains("ErrorMessage"));
-        }
-
-        [TestCase]
-        public async Task ReceivingErrorResponse_Should_FailCall_FuturesCoin()
-        {
-            // arrange
-            var client = TestHelpers.CreateAuthResponseClient("{{\"status\": \"error\", \"err-code\": \"Error!\", \"err-msg\": \"ErrorMessage\"}}");
-
-            // act
-            var result = await client.FuturesCoinApi.ExchangeData.GetSymbolsAsync();
-
-            // assert
-            Assert.IsFalse(result.Success);
-            Assert.IsTrue(result.Error.ToString().Contains("Error!"));
-            Assert.IsTrue(result.Error.ToString().Contains("ErrorMessage"));
-        }
-
-        [TestCase]
-        public async Task ReceivingErrorResponse_Should_FailCall_FuturesUsdt()
-        {
-            // arrange
-            var client = TestHelpers.CreateAuthResponseClient("{{\"status\": \"error\", \"err-code\": \"Error!\", \"err-msg\": \"ErrorMessage\"}}");
-
-            // act
-            var result = await client.FuturesUsdtApi.ExchangeData.GetSymbolsAsync();
-
-            // assert
-            Assert.IsFalse(result.Success);
-            Assert.IsTrue(result.Error.ToString().Contains("Error!"));
-            Assert.IsTrue(result.Error.ToString().Contains("ErrorMessage"));
-        }
-
-        [TestCase]
-        public async Task ReceivingErrorResponse_Should_FailCall_SwapsCoin()
-        {
-            // arrange
-            var client = TestHelpers.CreateAuthResponseClient("{{\"status\": \"error\", \"err-code\": \"Error!\", \"err-msg\": \"ErrorMessage\"}}");
-
-            // act
-            var result = await client.SwapsCoinApi.ExchangeData.GetSymbolsAsync();
-
-            // assert
-            Assert.IsFalse(result.Success);
-            Assert.IsTrue(result.Error.ToString().Contains("Error!"));
-            Assert.IsTrue(result.Error.ToString().Contains("ErrorMessage"));
-        }
-
-        [TestCase]
-        public async Task ReceivingHttpErrorResponse_Should_FailCall_Spot()
-        {
-            // arrange
-            var client = TestHelpers.CreateAuthResponseClient("Error message", System.Net.HttpStatusCode.BadRequest);
-
-            // act
-            var result = await client.SpotApi.ExchangeData.GetAssetsAsync();
-
-            // assert
-            Assert.IsFalse(result.Success);
-            Assert.IsTrue(result.Error.ToString().Contains("Error message"));
-        }
-
-        [TestCase]
-        public async Task ReceivingHttpErrorResponse_Should_FailCall_FuturesCoin()
-        {
-            // arrange
-            var client = TestHelpers.CreateAuthResponseClient("Error message", System.Net.HttpStatusCode.BadRequest);
-
-            // act
-            var result = await client.FuturesCoinApi.ExchangeData.GetSymbolsAsync();
-
-            // assert
-            Assert.IsFalse(result.Success);
-            Assert.IsTrue(result.Error.ToString().Contains("Error message"));
-        }
-
-        [TestCase]
-        public async Task ReceivingHttpErrorResponse_Should_FailCall_FuturesUsdt()
-        {
-            // arrange
-            var client = TestHelpers.CreateAuthResponseClient("Error message", System.Net.HttpStatusCode.BadRequest);
-
-            // act
-            var result = await client.FuturesUsdtApi.ExchangeData.GetSymbolsAsync();
 
             // assert
             Assert.IsFalse(result.Success);
@@ -125,7 +38,7 @@ namespace Huobi.Net.UnitTests
             var client = TestHelpers.CreateAuthResponseClient("Error message", System.Net.HttpStatusCode.BadRequest);
 
             // act
-            var result = await client.SwapsCoinApi.ExchangeData.GetSymbolsAsync();
+            var result = await client.SpotApi.ExchangeData.GetAssetsAsync();
 
             // assert
             Assert.IsFalse(result.Success);

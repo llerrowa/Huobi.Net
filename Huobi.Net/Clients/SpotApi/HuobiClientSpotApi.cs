@@ -15,6 +15,7 @@ using CryptoExchange.Net.Objects;
 using Huobi.Net.Enums;
 using Huobi.Net.Interfaces.Clients.SpotApi;
 using Huobi.Net.Objects;
+using Huobi.Net.Objects.Models;
 
 namespace Huobi.Net.Clients.SpotApi
 {
@@ -25,7 +26,7 @@ namespace Huobi.Net.Clients.SpotApi
         private readonly HuobiClientOptions _options;
         private readonly Log _log;
 
-        internal static TimeSyncState TimeSyncState = new TimeSyncState();
+        internal static TimeSyncState TimeSyncState = new TimeSyncState("Spot Api");
 
         /// <summary>
         /// Event triggered when an order is placed via this client
@@ -76,8 +77,8 @@ namespace Huobi.Net.Clients.SpotApi
         internal Task<WebCallResult<(T, DateTime)>> SendHuobiTimestampRequest<T>(Uri uri, HttpMethod method, CancellationToken cancellationToken, Dictionary<string, object>? parameters = null, bool signed = false)
             => _baseClient.SendHuobiTimestampRequest<T>(this, uri, method, cancellationToken, parameters, signed);
 
-        internal Task<WebCallResult<T>> SendHuobiRequest<T>(Uri uri, HttpMethod method, CancellationToken cancellationToken, Dictionary<string, object>? parameters = null, bool signed = false, int? weight = 1)
-            => _baseClient.SendHuobiRequest<T>(this, uri, method, cancellationToken, parameters, signed, weight);
+        internal Task<WebCallResult<T>> SendHuobiRequest<T>(Uri uri, HttpMethod method, CancellationToken cancellationToken, Dictionary<string, object>? parameters = null, bool signed = false, int? weight = 1, bool ignoreRatelimit = false)
+            => _baseClient.SendHuobiRequest<T>(this, uri, method, cancellationToken, parameters, signed, weight, ignoreRatelimit);
 
         /// <summary>
         /// Construct url
@@ -423,7 +424,7 @@ namespace Huobi.Net.Clients.SpotApi
 
         /// <inheritdoc />
         protected override TimeSyncInfo GetTimeSyncInfo()
-            => new TimeSyncInfo(_log, _options.SpotApiOptions.AutoTimestamp, TimeSyncState);
+            => new TimeSyncInfo(_log, _options.SpotApiOptions.AutoTimestamp, _options.SpotApiOptions.TimestampRecalculationInterval, TimeSyncState);
 
         /// <inheritdoc />
         public override TimeSpan GetTimeOffset()
