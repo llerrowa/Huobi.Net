@@ -29,7 +29,7 @@ namespace Huobi.Net.Clients.FuturesApi
             var parameters = new Dictionary<string, object>();
             parameters.AddOptionalParameter("symbol", symbol);
 
-            return await _baseClient.SendHuobiFuturesRequest<IEnumerable<HuobiFuturesBalance>>(_baseClient.GetUrl(PositionsEndpoint, "1"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
+            return await _baseClient.SendHuobiFuturesRequest<IEnumerable<HuobiFuturesBalance>>(_baseClient.GetUrl(BalancesEndpoint, "1"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
