@@ -47,5 +47,25 @@ namespace Huobi.Net.Interfaces.Clients.FuturesApi
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<IEnumerable<HuobiFuturesUsdtCrossPosition>>> GetPositionsCrossAsync(string? symbol = null, CancellationToken ct = default);
+
+        /// <summary>
+        /// Gets a list of balances for a sub-account
+        /// <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#isolated-query-a-single-sub-account-39-s-assets-information" /></para>
+        /// </summary>
+        /// <param name="subId">The sub-account id</param>
+        /// <param name="contractCode">The contract code to query balances for, returns all if null</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns></returns>
+        Task<WebCallResult<IEnumerable<HuobiFuturesUsdtBalance>>> GetSubAccountBalancesIsolatedAsync(long subId, string? contractCode = null, CancellationToken ct = default);
+
+        /// <summary>
+        /// Gets a list of balances for a sub-account
+        /// <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#cross-query-a-batch-of-sub-account-39-s-assets-information" /></para>
+        /// </summary>
+        /// <param name="subId">The sub-account id</param>
+        /// <param name="marginAccount">The margin account to query balances for, i.e. "USDT", returns all if null</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns></returns>
+        Task<WebCallResult<IEnumerable<HuobiFuturesUsdtCrossBalance>>> GetSubAccountBalancesCrossAsync(long subId, string? marginAccount = null, CancellationToken ct = default);
     }
 }
