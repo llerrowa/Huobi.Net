@@ -23,7 +23,7 @@ namespace Huobi.Net.Interfaces.Clients.SwapsApi
 
         /// <summary>
         /// Gets a list of positions
-        /// <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#query-user-s-position-information" /></para>
+        /// <para><a href="https://huobiapi.github.io/docs/coin_margined_swap/v1/en/#query-user-s-position-information" /></para>
         /// </summary>
         /// <param name="symbol">The id of the account to get the balances for</param>
         /// <param name="ct">Cancellation token</param>
