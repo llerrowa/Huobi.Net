@@ -24,7 +24,7 @@ namespace Huobi.Net.Clients.SwapsApi
         private readonly HuobiClientOptions _options;
         private readonly Log _log;
 
-        internal static TimeSyncState TimeSyncState = new TimeSyncState();
+        internal static TimeSyncState TimeSyncState = new TimeSyncState("Coin Swaps Api");
 
         /// <summary>
         /// Event triggered when an order is placed via this client
@@ -262,7 +262,7 @@ namespace Huobi.Net.Clients.SwapsApi
 
         /// <inheritdoc />
         protected override TimeSyncInfo GetTimeSyncInfo()
-            => new TimeSyncInfo(_log, _options.FuturesCoinApiOptions.AutoTimestamp, TimeSyncState);
+            => new TimeSyncInfo(_log, _options.SwapsCoinApiOptions.AutoTimestamp, _options.SwapsCoinApiOptions.TimestampRecalculationInterval, TimeSyncState);
 
         /// <inheritdoc />
         public override TimeSpan GetTimeOffset()

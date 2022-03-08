@@ -4,10 +4,155 @@
         <name>Huobi.Net</name>
     </assembly>
     <members>
+        <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi">
+            <inheritdoc />
+        </member>
+        <member name="E:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.OnOrderPlaced">
+            <summary>
+            Event triggered when an order is placed via this client
+            </summary>
+        </member>
+        <member name="E:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.OnOrderCanceled">
+            <summary>
+            Event triggered when an order is canceled via this client
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.ExchangeName">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.Trading">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.Account">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.ExchangeData">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.CreateAuthenticationProvider(CryptoExchange.Net.Authentication.ApiCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.GetUrl(System.String,System.String)">
+            <summary>
+            Construct url
+            </summary>
+            <param name="endpoint"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.GetServerTimestampAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.GetTimeSyncInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApi.GetTimeOffset">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiAccount">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiAccount.GetPositionsAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiExchangeData">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiExchangeData.GetSymbolsAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiExchangeData.GetServerTimeAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiTrading">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiTrading.GetUserTradesAsync(System.String,System.Nullable{Huobi.Net.Enums.Futures.TradeType},System.Int32,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi">
+            <inheritdoc />
+        </member>
+        <member name="E:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.OnOrderPlaced">
+            <summary>
+            Event triggered when an order is placed via this client
+            </summary>
+        </member>
+        <member name="E:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.OnOrderCanceled">
+            <summary>
+            Event triggered when an order is canceled via this client
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.ExchangeName">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.Account">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.Trading">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.ExchangeData">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.CreateAuthenticationProvider(CryptoExchange.Net.Authentication.ApiCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.GetUrl(System.String,System.String,System.String)">
+            <summary>
+            Construct url
+            </summary>
+            <param name="endpoint"></param>
+            <param name="api"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.GetServerTimestampAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.GetTimeSyncInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApi.GetTimeOffset">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiAccount">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiExchangeData">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiExchangeData.GetSymbolsAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiExchangeData.GetServerTimeAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiTrading">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiTrading.GetUserTradesIsolatedAsync(System.String,System.Nullable{Huobi.Net.Enums.Futures.TradeType},System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientSwapsCoinApiAccount">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientSwapsCoinApiAccount.GetPositionsAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
         <member name="T:Huobi.Net.Clients.HuobiClient">
             <inheritdoc cref="T:Huobi.Net.Interfaces.Clients.IHuobiClient" />
         </member>
         <member name="P:Huobi.Net.Clients.HuobiClient.SpotApi">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.HuobiClient.FuturesCoinApi">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.HuobiClient.SwapsCoinApi">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.HuobiClient.FuturesUsdtApi">
             <inheritdoc />
         </member>
         <member name="M:Huobi.Net.Clients.HuobiClient.#ctor">
@@ -307,6 +452,67 @@
         <member name="M:Huobi.Net.Clients.SpotApi.HuobiSocketClientSpotStreams.SubscribeToOrderDetailsUpdatesAsync(System.String,System.Action{CryptoExchange.Net.Sockets.DataEvent{Huobi.Net.Objects.Models.Socket.HuobiTradeUpdate}},System.Action{CryptoExchange.Net.Sockets.DataEvent{Huobi.Net.Objects.Models.Socket.HuobiOrderCancelationUpdate}},System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
+        <member name="T:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi">
+            <inheritdoc />
+        </member>
+        <member name="E:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.OnOrderPlaced">
+            <summary>
+            Event triggered when an order is placed via this client
+            </summary>
+        </member>
+        <member name="E:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.OnOrderCanceled">
+            <summary>
+            Event triggered when an order is canceled via this client
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.ExchangeName">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.Account">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.Trading">
+            <inheritdoc />
+        </member>
+        <member name="P:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.ExchangeData">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.CreateAuthenticationProvider(CryptoExchange.Net.Authentication.ApiCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.GetUrl(System.String,System.String,System.String)">
+            <summary>
+            Construct url
+            </summary>
+            <param name="endpoint"></param>
+            <param name="api"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.GetServerTimestampAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.GetTimeSyncInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApi.GetTimeOffset">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApiExchangeData">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApiExchangeData.GetSymbolsAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApiExchangeData.GetServerTimeAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApiTrading">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.SwapsApi.HuobiClientSwapsCoinApiTrading.GetUserTradesAsync(System.String,System.Nullable{Huobi.Net.Enums.Futures.TradeType},System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
         <member name="T:Huobi.Net.Enums.AccountEventType">
             <summary>
             Event type
@@ -515,6 +721,146 @@
         <member name="F:Huobi.Net.Enums.FilterDirection.Previous">
             <summary>
             Get results before
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Enums.Futures.ContractStatus">
+            <summary>
+            Contract status
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.Delisting">
+            <summary>
+            Delisting
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.Listing">
+            <summary>
+             Listing
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.PendingListing">
+            <summary>
+            Pending Listing
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.Suspension">
+            <summary>
+            Suspension
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.SuspendingOfListing">
+            <summary>
+            Suspending of listing
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.InSettlement">
+            <summary>
+            In settlement
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.Delivering">
+            <summary>
+            Delivering
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.SettlementCompleted">
+            <summary>
+            Settlement completed
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.Delivered">
+            <summary>
+            Delivered
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractStatus.SuspendingOfTrade">
+            <summary>
+            Suspending of Trade
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Enums.Futures.ContractType">
+            <summary>
+            Contract type
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractType.ThisWeek">
+            <summary>
+            This week
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractType.NextWeek">
+            <summary>
+             Next week
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractType.Quarter">
+            <summary>
+            Quarter
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractType.NextQuarter">
+            <summary>
+            Next quarter
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.ContractType.Swap">
+            <summary>
+            Swap
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Enums.Futures.Offset">
+            <summary>
+            Offset
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.Offset.Open">
+            <summary>
+            Open positions
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.Offset.Close">
+            <summary>
+            Close positions
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Enums.Futures.TradeType">
+            <summary>
+            Trade type
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.TradeType.All">
+            <summary>
+            All
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.TradeType.OpenLong">
+            <summary>
+            Open long
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.TradeType.OpenShort">
+            <summary>
+            Open short
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.TradeType.CloseShort">
+            <summary>
+            Close short
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.TradeType.CloseLong">
+            <summary>
+            Close long
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.TradeType.LiquidateLongPositions">
+            <summary>
+            Liquidate long positions
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.TradeType.LiquidateShortPositions">
+            <summary>
+            Liquidate short positions
             </summary>
         </member>
         <member name="T:Huobi.Net.Enums.InstrumentStatus">
@@ -1027,6 +1373,203 @@
             </summary>
             <param name="symbolString">string to validate</param>
         </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiAccount">
+            <summary>
+            Huobi account endpoints. Account endpoints include balance info, withdraw/deposit info and requesting and account settings
+            </summary>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiAccount.GetBalancesAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of balances
+            <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#query-user-s-account-information" /></para>
+            </summary>
+            <param name="symbol">The id of the account to get the balances for</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiAccount.GetPositionsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of positions
+            <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#query-user-s-position-information" /></para>
+            </summary>
+            <param name="symbol">The id of the account to get the balances for</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApi">
+            <summary>
+            COIN-M futures API endpoints
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApi.Account">
+            <summary>
+            Endpoints related to account settings, info or actions
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApi.ExchangeData">
+            <summary>
+            Endpoints related to retrieving market and system data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApi.Trading">
+            <summary>
+            Endpoints related to orders and trades
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiExchangeData">
+            <summary>
+            Huobi exchange data endpoints. Exchange data includes market data (tickers, order books, etc) and system status.
+            </summary>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiExchangeData.GetSymbolsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of supported symbols
+            <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#get-contract-info" /></para>
+            </summary>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiExchangeData.GetServerTimeAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the server time
+            <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#get-current-system-timestamp" /></para>
+            </summary>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiTrading">
+            <summary>
+            Huobi trading endpoints, placing and managing orders.
+            </summary>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiTrading.GetUserTradesAsync(System.String,System.Nullable{Huobi.Net.Enums.Futures.TradeType},System.Int32,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of trades for a specific symbol
+            <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#get-history-match-results" /></para>
+            </summary>
+            <param name="symbol">The symbol to retrieve trades for</param>
+            <param name="tradeType">Only return trades with specific trade types</param>
+            <param name="daysLookback">Number of days to look back. Maximum range is 90 days and this will be used by default</param>
+            <param name="contractCode">The contract code to retrieve trades for</param>
+            <param name="page">Page</param>
+            <param name="limit">Page limit (min 1, max 50, default 20)</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApi">
+            <summary>
+            USDT-M futures API endpoints
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApi.Account">
+            <summary>
+            Endpoints related to account settings, info or actions
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApi.ExchangeData">
+            <summary>
+            Endpoints related to retrieving market and system data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApi.Trading">
+            <summary>
+            Endpoints related to orders and trades
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiAccount">
+            <summary>
+            Huobi account endpoints. Account endpoints include balance info, withdraw/deposit info and requesting and account settings
+            </summary>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiAccount.GetBalancesIsolatedAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of balances
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#isolated-query-user-s-account-information" /></para>
+            </summary>
+            <param name="contractCode">The contract code to query balances for, returns all if null</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiAccount.GetBalancesCrossAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of balances
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#cross-query-user-39-s-account-information" /></para>
+            </summary>
+            <param name="marginAccount">The margin account to query balances for, i.e. "USDT", returns all if null</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiAccount.GetPositionsIsolatedAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of positions
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#isolated-query-user-s-position-information" /></para>
+            </summary>
+            <param name="symbol">The id of the account to get the balances for</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiAccount.GetPositionsCrossAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of positions
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#cross-query-user-39-s-position-information" /></para>
+            </summary>
+            <param name="symbol">The id of the account to get the balances for</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiExchangeData">
+            <summary>
+            Huobi exchange data endpoints. Exchange data includes market data (tickers, order books, etc) and system status.
+            </summary>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiExchangeData.GetSymbolsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of supported symbols
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#general-query-swap-info" /></para>
+            </summary>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiExchangeData.GetServerTimeAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the server time
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#get-current-system-timestamp" /></para>
+            </summary>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiTrading">
+            <summary>
+            Huobi trading endpoints, placing and managing orders.
+            </summary>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiTrading.GetUserTradesIsolatedAsync(System.String,System.Nullable{Huobi.Net.Enums.Futures.TradeType},System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of isolated trades for a specific symbol
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#isolated-acquire-history-match-results" /></para>
+            </summary>
+            <param name="contractCode">The contract code to retrieve trades for</param>
+            <param name="tradeType">Only return trades with specific trade types</param>
+            <param name="daysLookback">Number of days to look back. Maximum range is 90 days and this will be used by default</param>
+            <param name="page">Page</param>
+            <param name="limit">Page limit (min 1, max 50, default 20)</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiTrading.GetUserTradesCrossAsync(System.String,System.String,System.Nullable{Huobi.Net.Enums.Futures.TradeType},System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of cross margin trades for a specific symbol
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#cross-get-history-match-results" /></para>
+            </summary>
+            <param name="contractCode">The contract code to retrieve trades for</param>
+            <param name="pair">The pair code to retrieve trades for</param>
+            <param name="tradeType">Only return trades with specific trade types</param>
+            <param name="daysLookback">Number of days to look back. Maximum range is 90 days and this will be used by default</param>
+            <param name="page">Page</param>
+            <param name="limit">Page limit (min 1, max 50, default 20)</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
         <member name="T:Huobi.Net.Interfaces.Clients.IHuobiClient">
             <summary>
             Client for accessing the Huobi API. 
@@ -1035,6 +1578,21 @@
         <member name="P:Huobi.Net.Interfaces.Clients.IHuobiClient.SpotApi">
             <summary>
             Spot endpoints
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.IHuobiClient.FuturesCoinApi">
+            <summary>
+            COIN-M futures endpoints
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.IHuobiClient.SwapsCoinApi">
+            <summary>
+            COIN-M swaps endpoints
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.IHuobiClient.FuturesUsdtApi">
+            <summary>
+            USDT-M futures endpoints
             </summary>
         </member>
         <member name="T:Huobi.Net.Interfaces.Clients.IHuobiSocketClient">
@@ -1654,6 +2212,88 @@
             <param name="ct">Cancellation token for closing this subscription</param>
             <returns>A stream subscription. This stream subscription can be used to be notified when the socket is disconnected/reconnected</returns>
         </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApi">
+            <summary>
+            COIN-M swaps API endpoints
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApi.Account">
+            <summary>
+            Endpoints related to account settings, info or actions
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApi.ExchangeData">
+            <summary>
+            Endpoints related to retrieving market and system data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApi.Trading">
+            <summary>
+            Endpoints related to orders and trades
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiAccount">
+            <summary>
+            Huobi account endpoints. Account endpoints include balance info, withdraw/deposit info and requesting and account settings
+            </summary>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiAccount.GetBalancesAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of balances
+            <para><a href="https://huobiapi.github.io/docs/coin_margined_swap/v1/en/#query-user-s-account-information" /></para>
+            </summary>
+            <param name="symbol">The id of the account to get the balances for</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiAccount.GetPositionsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of positions
+            <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#query-user-s-position-information" /></para>
+            </summary>
+            <param name="symbol">The id of the account to get the balances for</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiExchangeData">
+            <summary>
+            Huobi exchange data endpoints. Exchange data includes market data (tickers, order books, etc) and system status.
+            </summary>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiExchangeData.GetSymbolsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of supported symbols
+            <para><a href="https://huobiapi.github.io/docs/coin_margined_swap/v1/en/#query-swap-info" /></para>
+            </summary>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiExchangeData.GetServerTimeAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the server time
+            <para><a href="https://huobiapi.github.io/docs/coin_margined_swap/v1/en/#get-current-system-timestamp" /></para>
+            </summary>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiTrading">
+            <summary>
+            Huobi trading endpoints, placing and managing orders.
+            </summary>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiTrading.GetUserTradesAsync(System.String,System.Nullable{Huobi.Net.Enums.Futures.TradeType},System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of trades for a specific symbol
+            <para><a href="https://huobiapi.github.io/docs/coin_margined_swap/v1/en/#acquire-history-match-results" /></para>
+            </summary>
+            <param name="contractCode">The contract code to retrieve trades for</param>
+            <param name="tradeType">Only return trades with specific trade types</param>
+            <param name="daysLookback">Number of days to look back. Maximum range is 90 days and this will be used by default</param>
+            <param name="page">Page</param>
+            <param name="limit">Page limit (min 1, max 50, default 20)</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
         <member name="T:Huobi.Net.Objects.HuobiApiAddresses">
             <summary>
             Api addresses usable for the Huobi clients
@@ -1702,6 +2342,21 @@
         <member name="P:Huobi.Net.Objects.HuobiClientOptions.SpotApiOptions">
             <summary>
             Spot API options
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.HuobiClientOptions.FuturesCoinApiOptions">
+            <summary>
+            COIN-M futures API options
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.HuobiClientOptions.FuturesUsdtApiOptions">
+            <summary>
+            USDT-M futures API options
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.HuobiClientOptions.SwapsCoinApiOptions">
+            <summary>
+            COIN-M swaps API options
             </summary>
         </member>
         <member name="M:Huobi.Net.Objects.HuobiClientOptions.#ctor">
@@ -1819,6 +2474,551 @@
         <member name="P:Huobi.Net.Objects.Internal.HuobiDataEvent`1.Data">
             <summary>
             The data of the update
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance">
+            <summary>
+            Position data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.Symbol">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.MarginBalance">
+            <summary>
+            The margin balance
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.MarginPosition">
+            <summary>
+            The margin position
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.MarginFrozen">
+            <summary>
+            The margin frozen
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.MarginAvailable">
+            <summary>
+            The margin available
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.ProfitReal">
+            <summary>
+            Realized profit and loss
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.ProfitUnreal">
+            <summary>
+            Unrealized profit and loss
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.RiskRate">
+            <summary>
+            The risk_rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.LiquidationPrice">
+            <summary>
+            The liquidation_price
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.WithdrawAvailable">
+            <summary>
+            Available withdrawal
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.LeverRate">
+            <summary>
+            The leverage rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.AdjustmentFactor">
+            <summary>
+            The adjustment factor
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesBalance.Marginstatic">
+            <summary>
+            Static margin
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtBalance.ContractCode">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtBalance.MarginStatic">
+            <summary>
+            The static margin
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtBalance.MarginMode">
+            <summary>
+            The margin mode
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtBalance.MarginAccount">
+            <summary>
+            The margin account
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.FuturesBalances">
+            <summary>
+            The futures balances on the account
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.MarginMode">
+            <summary>
+            The margin mode
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.MarginAccount">
+            <summary>
+            The margin account
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.MarginAsset">
+            <summary>
+            The margin asset
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.MarginBalance">
+            <summary>
+            The margin balance
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.Marginstatic">
+            <summary>
+            Static margin
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.MarginPosition">
+            <summary>
+            The margin position
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.MarginFrozen">
+            <summary>
+            The margin frozen
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.ProfitReal">
+            <summary>
+            Realized profit and loss
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.ProfitUnreal">
+            <summary>
+            Unrealized profit and loss
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.WithdrawAvailable">
+            <summary>
+            Available withdrawal
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.RiskRate">
+            <summary>
+            The risk_rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.PositionMode">
+            <summary>
+            The position mode, single_side，dual_side
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossBalance.ContractDetail">
+            <summary>
+            The contract details
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade">
+            <summary>
+            Trade info
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.Id">
+            <summary>
+            The id of the trade
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.MatchId">
+            <summary>
+            The id of the match
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.OrderId">
+            <summary>
+            The id of the order
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.OrderIdString">
+            <summary>
+            The string id of the order
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.Symbol">
+            <summary>
+            The symbol of the trade
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.OrderSource">
+            <summary>
+            The order source of the order system, possible values: web, api, m, risk, settlement, ios, android, windows, mac, trigger, tpsl
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.ContractType">
+            <summary>
+            The contract type
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.ContractCode">
+            <summary>
+            The contract code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.Direction">
+            <summary>
+            The direction
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.Offset">
+            <summary>
+            The offset
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.Quantity">
+            <summary>
+            The trade volume
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.Price">
+            <summary>
+            The trade price
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.TurnoverUsd">
+            <summary>
+            The trade turnover in USD
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.Timestamp">
+            <summary>
+            The timestamp in milliseconds when this record is created
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.OffsetProfitLoss">
+            <summary>
+            The profits and losses generated from closing positions(calculated with the average price of position, exclude profit in history settlement.)
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.TradeFee">
+            <summary>
+            The fees charged by platform
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.Role">
+            <summary>
+            The role in the transaction: taker or maker
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.FeeAsset">
+            <summary>
+            The corresponding cryptocurrency to the given fee
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.RealProfit">
+            <summary>
+            The real profit (calculated with the opening average price, include profit in history settlement.)
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.MarginMode">
+            <summary>
+            The margin mode: "isolated"
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.MarginAccount">
+            <summary>
+            The margin account
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.Pair">
+            <summary>
+            The pair
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesOrderTrade.BusinessType">
+            <summary>
+            The business type: futures, swap
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition">
+            <summary>
+            Position data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.Symbol">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.ContractCode">
+            <summary>
+            The contract code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.ContractType">
+            <summary>
+            The contract type
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.Quantity">
+            <summary>
+            The position quantity
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.Available">
+            <summary>
+            The available position that can be closed
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.Frozen">
+            <summary>
+            The amount frozen
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.CostOpen">
+            <summary>
+            The opening average price
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.CostHold">
+            <summary>
+            The average price of the position
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.ProfitUnreal">
+            <summary>
+            Unrealized profit and loss
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.ProfitRate">
+            <summary>
+            The profit rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.Profit">
+            <summary>
+            The profit
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.PositionMargin">
+            <summary>
+            The position margin
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.LeverRate">
+            <summary>
+            The leverage rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.Direction">
+            <summary>
+            The direction
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesPosition.LastPrice">
+            <summary>
+            Latest price
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition">
+            <summary>
+            Position data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.Symbol">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.ContractCode">
+            <summary>
+            The contract code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.Quantity">
+            <summary>
+            The position quantity
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.Available">
+            <summary>
+            The available position that can be closed
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.Frozen">
+            <summary>
+            The amount frozen
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.CostOpen">
+            <summary>
+            The opening average price
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.CostHold">
+            <summary>
+            The average price of the position
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.ProfitUnreal">
+            <summary>
+            Unrealized profit and loss
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.ProfitRate">
+            <summary>
+            The profit rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.Profit">
+            <summary>
+            The profit
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.PositionMargin">
+            <summary>
+            The position margin
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.LeverRate">
+            <summary>
+            The leverage rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.Direction">
+            <summary>
+            The direction
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.LastPrice">
+            <summary>
+            Latest price
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.MarginAsset">
+            <summary>
+            The margin asset
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.MarginMode">
+            <summary>
+            The margin mode
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.MarginAccount">
+            <summary>
+            The margin account
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtPosition.PositionMode">
+            <summary>
+            The position mode, single_side，dual_side
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossPosition">
+            <summary>
+            Position data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossPosition.ContractType">
+            <summary>
+            The contract type
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossPosition.Pair">
+            <summary>
+            The pair
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesUsdtCrossPosition.BusinessType">
+            <summary>
+            The business type, futures, swap
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol">
+            <summary>
+            Symbol data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.Symbol">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.ContractCode">
+            <summary>
+            The contract code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.ContractType">
+            <summary>
+            The contract type
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.ContractSize">
+            <summary>
+            The contract size
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.PriceTick">
+            <summary>
+            The price tick
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.DeliveryDate">
+            <summary>
+            The delivery date
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.CreateDate">
+            <summary>
+            The create date
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.SettlementTime">
+            <summary>
+            The settlement time
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.DeliveryTime">
+            <summary>
+            The delivery time
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.ContractStatus">
+            <summary>
+            The contract status
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.Pair">
+            <summary>
+            The pair
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.BusinessType">
+            <summary>
+            The business type, futures / swap
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Futures.HuobiFuturesSymbol.SupportMarginMode">
+            <summary>
+            The support margin mode: "cross", "isolated", "all"
             </summary>
         </member>
         <member name="T:Huobi.Net.Objects.Models.HuobiAccount">
@@ -3599,6 +4799,296 @@
         <member name="P:Huobi.Net.Objects.Models.Socket.HuobiTradeUpdate.OrderStatus">
             <summary>
             Order status
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance">
+            <summary>
+            Position data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.Symbol">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.ContractCode">
+            <summary>
+            The contract code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.MarginBalance">
+            <summary>
+            The margin balance
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.MarginPosition">
+            <summary>
+            The margin position
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.MarginFrozen">
+            <summary>
+            The margin frozen
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.MarginAvailable">
+            <summary>
+            The margin available
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.ProfitReal">
+            <summary>
+            Realized profit and loss
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.ProfitUnreal">
+            <summary>
+            Unrealized profit and loss
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.RiskRate">
+            <summary>
+            The risk_rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.LiquidationPrice">
+            <summary>
+            The liquidation_price
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.WithdrawAvailable">
+            <summary>
+            Available withdrawal
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.LeverRate">
+            <summary>
+            The leverage rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.AdjustmentFactor">
+            <summary>
+            The adjustment factor
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsBalance.Marginstatic">
+            <summary>
+            Static margin
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade">
+            <summary>
+            Trade info
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.Id">
+            <summary>
+            The id of the trade
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.MatchId">
+            <summary>
+            The id of the match
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.OrderId">
+            <summary>
+            The id of the order
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.OrderIdString">
+            <summary>
+            The string id of the order
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.Symbol">
+            <summary>
+            The symbol of the trade
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.OrderSource">
+            <summary>
+            The order source of the order system, possible values: web, api, m, risk, settlement, ios, android, windows, mac, trigger, tpsl
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.ContractCode">
+            <summary>
+            The contract code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.Direction">
+            <summary>
+            The direction
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.Offset">
+            <summary>
+            The offset
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.Quantity">
+            <summary>
+            The trade volume
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.Price">
+            <summary>
+            The trade price
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.TurnoverUsd">
+            <summary>
+            The trade turnover in USD
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.Timestamp">
+            <summary>
+            The timestamp in milliseconds when this record is created
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.OffsetProfitLoss">
+            <summary>
+            The profits and losses generated from closing positions(calculated with the average price of position, exclude profit in history settlement.)
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.TradeFee">
+            <summary>
+            The fees charged by platform
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.Role">
+            <summary>
+            The role in the transaction: taker or maker
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.FeeAsset">
+            <summary>
+            The corresponding cryptocurrency to the given fee
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsOrderTrade.RealProfit">
+            <summary>
+            The real profit (calculated with the opening average price, include profit in history settlement.)
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition">
+            <summary>
+            Position data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.Symbol">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.ContractCode">
+            <summary>
+            The contract code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.Quantity">
+            <summary>
+            The position quantity
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.Available">
+            <summary>
+            The available position that can be closed
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.Frozen">
+            <summary>
+            The amount frozen
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.CostOpen">
+            <summary>
+            The opening average price
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.CostHold">
+            <summary>
+            The average price of the position
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.ProfitUnreal">
+            <summary>
+            Unrealized profit and loss
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.ProfitRate">
+            <summary>
+            The profit rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.Profit">
+            <summary>
+            The profit
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.PositionMargin">
+            <summary>
+            The position margin
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.LeverRate">
+            <summary>
+            The leverage rate
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.Direction">
+            <summary>
+            The direction
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsPosition.LastPrice">
+            <summary>
+            Latest price
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Objects.Models.Swaps.HuobiSwapsSymbol">
+            <summary>
+            Symbol data
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsSymbol.Symbol">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsSymbol.ContractCode">
+            <summary>
+            The contract code
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsSymbol.ContractSize">
+            <summary>
+            The contract size
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsSymbol.PriceTick">
+            <summary>
+            The price tick
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsSymbol.CreateDate">
+            <summary>
+            The create date
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsSymbol.DeliveryTime">
+            <summary>
+            The delivery time
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsSymbol.ContractStatus">
+            <summary>
+            The contract status
+            </summary>
+        </member>
+        <member name="P:Huobi.Net.Objects.Models.Swaps.HuobiSwapsSymbol.SettlementDate">
+            <summary>
+            The settlement date
             </summary>
         </member>
         <member name="T:Huobi.Net.SymbolOrderBooks.HuobiSpotSymbolOrderBook">

@@ -14,7 +14,6 @@ using CryptoExchange.Net.Objects;
 using Huobi.Net.Enums;
 using Huobi.Net.Interfaces.Clients.FuturesApi;
 using Huobi.Net.Objects;
-using Huobi.Net.Objects.Models.Futures;
 
 namespace Huobi.Net.Clients.FuturesApi
 {
@@ -25,7 +24,7 @@ namespace Huobi.Net.Clients.FuturesApi
         private readonly HuobiClientOptions _options;
         private readonly Log _log;
 
-        internal static TimeSyncState TimeSyncState = new TimeSyncState();
+        internal static TimeSyncState TimeSyncState = new TimeSyncState("Coin Futures Api");
 
         /// <summary>
         /// Event triggered when an order is placed via this client
@@ -260,7 +259,7 @@ namespace Huobi.Net.Clients.FuturesApi
 
         /// <inheritdoc />
         protected override TimeSyncInfo GetTimeSyncInfo()
-            => new TimeSyncInfo(_log, _options.FuturesCoinApiOptions.AutoTimestamp, TimeSyncState);
+            => new TimeSyncInfo(_log, _options.FuturesCoinApiOptions.AutoTimestamp, _options.FuturesCoinApiOptions.TimestampRecalculationInterval, TimeSyncState);
 
         /// <inheritdoc />
         public override TimeSpan GetTimeOffset()

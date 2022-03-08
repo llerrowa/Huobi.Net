@@ -23,7 +23,7 @@ namespace Huobi.Net.Clients.FuturesApi
         private readonly HuobiClientOptions _options;
         private readonly Log _log;
 
-        internal static TimeSyncState TimeSyncState = new TimeSyncState();
+        internal static TimeSyncState TimeSyncState = new TimeSyncState("USDT Futures Api");
 
         /// <summary>
         /// Event triggered when an order is placed via this client
@@ -265,7 +265,7 @@ namespace Huobi.Net.Clients.FuturesApi
 
         /// <inheritdoc />
         protected override TimeSyncInfo GetTimeSyncInfo()
-            => new TimeSyncInfo(_log, _options.FuturesUsdtApiOptions.AutoTimestamp, TimeSyncState);
+            => new TimeSyncInfo(_log, _options.FuturesUsdtApiOptions.AutoTimestamp, _options.FuturesUsdtApiOptions.TimestampRecalculationInterval, TimeSyncState);
 
         /// <inheritdoc />
         public override TimeSpan GetTimeOffset()
