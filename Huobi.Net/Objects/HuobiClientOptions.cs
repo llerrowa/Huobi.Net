@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CryptoExchange.Net.Interfaces;
 using CryptoExchange.Net.Objects;
@@ -40,6 +40,59 @@ namespace Huobi.Net.Objects
             set => _spotApiOptions = new RestApiClientOptions(_spotApiOptions, value);
         }
 
+        private RestApiClientOptions _futuresCoinApiOptions = new RestApiClientOptions("https://api.hbdm.com/api")
+        {
+            RateLimiters = new List<IRateLimiter>
+            {
+                new RateLimiter()
+                    .AddApiKeyLimit(72, TimeSpan.FromSeconds(3), true, false )
+                    .AddTotalRateLimit(120, TimeSpan.FromSeconds(3))
+            }
+        };
+        /// <summary>
+        /// COIN-M futures API options
+        /// </summary>
+        public RestApiClientOptions FuturesCoinApiOptions
+        {
+            get => _futuresCoinApiOptions;
+            set => _futuresCoinApiOptions = new RestApiClientOptions(_futuresCoinApiOptions, value);
+        }
+
+        private RestApiClientOptions _futuresUsdtApiOptions = new RestApiClientOptions("https://api.hbdm.com")
+        {
+            RateLimiters = new List<IRateLimiter>
+            {
+                new RateLimiter()
+                    .AddApiKeyLimit(72, TimeSpan.FromSeconds(3), true, false )
+                    .AddTotalRateLimit(120, TimeSpan.FromSeconds(3))
+            }
+        };
+        /// <summary>
+        /// USDT-M futures API options
+        /// </summary>
+        public RestApiClientOptions FuturesUsdtApiOptions
+        {
+            get => _futuresUsdtApiOptions;
+            set => _futuresUsdtApiOptions = new RestApiClientOptions(_futuresUsdtApiOptions, value);
+        }
+
+        private RestApiClientOptions _swapsCoinApiOptions = new RestApiClientOptions("https://api.hbdm.com")
+        {
+            RateLimiters = new List<IRateLimiter>
+            {
+                new RateLimiter()
+                    .AddApiKeyLimit(72, TimeSpan.FromSeconds(3), true, false )
+                    .AddTotalRateLimit(120, TimeSpan.FromSeconds(3))
+            }
+        };
+        /// <summary>
+        /// COIN-M swaps API options
+        /// </summary>
+        public RestApiClientOptions SwapsCoinApiOptions
+        {
+            get => _swapsCoinApiOptions;
+            set => _swapsCoinApiOptions = new RestApiClientOptions(_swapsCoinApiOptions, value);
+        }
         /// <summary>
         /// ctor
         /// </summary>
@@ -59,6 +112,9 @@ namespace Huobi.Net.Objects
 
             SignPublicRequests = baseOn.SignPublicRequests;
             _spotApiOptions = new RestApiClientOptions(baseOn.SpotApiOptions, null);
+            _futuresCoinApiOptions = new RestApiClientOptions(baseOn.FuturesCoinApiOptions, null);
+            _futuresUsdtApiOptions = new RestApiClientOptions(baseOn.FuturesUsdtApiOptions, null);
+            _swapsCoinApiOptions = new RestApiClientOptions(baseOn.SwapsCoinApiOptions, null);
         }
     }
 

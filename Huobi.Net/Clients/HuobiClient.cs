@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -7,6 +7,16 @@ using System.Threading.Tasks;
 using CryptoExchange.Net;
 using CryptoExchange.Net.Interfaces;
 using CryptoExchange.Net.Objects;
+using Huobi.Net.Clients.FuturesApi;
+using Huobi.Net.Clients.SpotApi;
+using Huobi.Net.Clients.SwapsApi;
+using Huobi.Net.Interfaces.Clients;
+using Huobi.Net.Interfaces.Clients.FuturesApi;
+using Huobi.Net.Interfaces.Clients.SpotApi;
+using Huobi.Net.Interfaces.Clients.SwapsApi;
+using Huobi.Net.Objects;
+using Huobi.Net.Objects.Internal;
+using Huobi.Net.Objects.Internal.Futures;
 using Huobi.Net.Clients.SpotApi;
 using Huobi.Net.Interfaces.Clients;
 using Huobi.Net.Interfaces.Clients.SpotApi;
@@ -23,6 +33,12 @@ namespace Huobi.Net.Clients
 
         /// <inheritdoc />
         public IHuobiClientSpotApi SpotApi { get; }
+        /// <inheritdoc />
+        public IHuobiClientFuturesCoinApi FuturesCoinApi { get; }
+        /// <inheritdoc />
+        public IHuobiClientSwapsCoinApi SwapsCoinApi { get; }
+        /// <inheritdoc />
+        public IHuobiClientFuturesUsdtApi FuturesUsdtApi { get; }
 
         #endregion
 
@@ -42,6 +58,9 @@ namespace Huobi.Net.Clients
             manualParseError = true;
 
             SpotApi = AddApiClient(new HuobiClientSpotApi(log, this, options));
+            FuturesCoinApi = AddApiClient(new HuobiClientFuturesCoinApi(log, this, options));
+            SwapsCoinApi = AddApiClient(new HuobiClientSwapsCoinApi(log, this, options));
+            FuturesUsdtApi = AddApiClient(new HuobiClientFuturesUsdtApi(log, this, options));
         }
         #endregion
 
@@ -82,6 +101,18 @@ namespace Huobi.Net.Clients
         internal async Task<WebCallResult<T>> SendHuobiRequest<T>(RestApiClient apiClient, Uri uri, HttpMethod method, CancellationToken cancellationToken, Dictionary<string, object>? parameters = null, bool signed = false, int? weight = 1, bool ignoreRatelimit = false)
         {
             var result = await SendRequestAsync<HuobiBasicResponse<T>>(apiClient, uri, method, cancellationToken, parameters, signed, requestWeight: weight ?? 1, ignoreRatelimit: ignoreRatelimit).ConfigureAwait(false);
+            if (!result || result.Data == null)
+                return result.AsError<T>(result.Error!);
+
+            if (result.Data.ErrorCode != null)
+                return result.AsError<T>(new ServerError(result.Data.ErrorCode, result.Data.ErrorMessage));
+
+            return result.As(result.Data.Data);
+        }
+
+        internal async Task<WebCallResult<T>> SendHuobiFuturesRequest<T>(RestApiClient apiClient, Uri uri, HttpMethod method, CancellationToken cancellationToken, Dictionary<string, object>? parameters = null, bool signed = false, int? weight = 1)
+        {
+            var result = await SendRequestAsync<HuobiBasicFuturesResponse<T>>(apiClient, uri, method, cancellationToken, parameters, signed, requestWeight: weight ?? 1).ConfigureAwait(false);
             if (!result || result.Data == null)
                 return result.AsError<T>(result.Error!);
 

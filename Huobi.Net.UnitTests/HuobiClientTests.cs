@@ -2,10 +2,7 @@
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using CryptoExchange.Net.Authentication;
 using System.Threading.Tasks;
 using Huobi.Net.Enums;
 using System.Reflection;
@@ -31,12 +28,11 @@ namespace Huobi.Net.UnitTests
 
             // assert
             Assert.IsFalse(result.Success);
-            Assert.IsTrue(result.Error.ToString().Contains("Error!"));
-            Assert.IsTrue(result.Error.ToString().Contains("ErrorMessage"));
+            Assert.IsTrue(result.Error.ToString().Contains("Error message"));
         }
 
         [TestCase]
-        public async Task ReceivingHttpErrorResponse_Should_FailCall()
+        public async Task ReceivingHttpErrorResponse_Should_FailCall_SwapsCoin()
         {
             // arrange
             var client = TestHelpers.CreateAuthResponseClient("Error message", System.Net.HttpStatusCode.BadRequest);
@@ -48,7 +44,6 @@ namespace Huobi.Net.UnitTests
             Assert.IsFalse(result.Success);
             Assert.IsTrue(result.Error.ToString().Contains("Error message"));
         }
-
 
         public string SerializeExpected<T>(T data, bool tick)
         {
