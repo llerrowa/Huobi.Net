@@ -176,6 +176,9 @@
         <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientSwapsCoinApiAccount.GetSubAccountBalancesAsync(System.Int64,System.String,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientSwapsCoinApiAccount.TransferBetweenSpotAndFutures(Huobi.Net.Enums.Swaps.CoinSwapTransferType,Huobi.Net.Enums.Swaps.CoinSwapTransferType,System.String,System.Decimal,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
         <member name="T:Huobi.Net.Clients.HuobiClient">
             <inheritdoc cref="T:Huobi.Net.Interfaces.Clients.IHuobiClient" />
         </member>
@@ -1211,6 +1214,21 @@
         <member name="F:Huobi.Net.Enums.SourceType.C2CMargin">
             <summary>
             c2c margin api
+            </summary>
+        </member>
+        <member name="T:Huobi.Net.Enums.Swaps.CoinSwapTransferType">
+            <summary>
+            Transfer Type
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Swaps.CoinSwapTransferType.Spot">
+            <summary>
+            Spot
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Swaps.CoinSwapTransferType.Swap">
+            <summary>
+            Swap
             </summary>
         </member>
         <member name="T:Huobi.Net.Enums.SymbolState">
@@ -2446,6 +2464,18 @@
             </summary>
             <param name="subId">The sub-account id</param>
             <param name="symbol">The id of the account to get the balances for</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiAccount.TransferBetweenSpotAndFutures(Huobi.Net.Enums.Swaps.CoinSwapTransferType,Huobi.Net.Enums.Swaps.CoinSwapTransferType,System.String,System.Decimal,System.Threading.CancellationToken)">
+            <summary>
+            Transfer margin between spot and coin swap account
+            <para><a href="https://huobiapi.github.io/docs/coin_margined_swap/v1/en/#transfer-margin-between-spot-account-and-coin-margined-swap-account" /></para>
+            </summary>
+            <param name="from">The account to transfer from</param>
+            <param name="to">The account to transfer to</param>
+            <param name="asset">The asset to transfer</param>
+            <param name="quantity">The amount to transfer</param>
             <param name="ct">Cancellation token</param>
             <returns></returns>
         </member>

@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using CryptoExchange.Net.Objects;
+using Huobi.Net.Enums.Swaps;
 using Huobi.Net.Objects.Models.Swaps;
 
 namespace Huobi.Net.Interfaces.Clients.SwapsApi
@@ -38,5 +39,17 @@ namespace Huobi.Net.Interfaces.Clients.SwapsApi
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<IEnumerable<HuobiSwapsBalance>>> GetSubAccountBalancesAsync(long subId, string? symbol = null, CancellationToken ct = default);
+
+        /// <summary>
+        /// Transfer margin between spot and coin swap account
+        /// <para><a href="https://huobiapi.github.io/docs/coin_margined_swap/v1/en/#transfer-margin-between-spot-account-and-coin-margined-swap-account" /></para>
+        /// </summary>
+        /// <param name="from">The account to transfer from</param>
+        /// <param name="to">The account to transfer to</param>
+        /// <param name="asset">The asset to transfer</param>
+        /// <param name="quantity">The amount to transfer</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns></returns>
+        Task<WebCallResult<long>> TransferBetweenSpotAndFutures(CoinSwapTransferType from, CoinSwapTransferType to, string asset, decimal quantity, CancellationToken ct = default);
     }
 }

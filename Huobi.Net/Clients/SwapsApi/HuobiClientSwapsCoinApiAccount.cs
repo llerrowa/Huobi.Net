@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using CryptoExchange.Net;
 using CryptoExchange.Net.Objects;
 using Huobi.Net.Clients.SwapsApi;
+using Huobi.Net.Converters.Futures;
+using Huobi.Net.Enums.Swaps;
 using Huobi.Net.Interfaces.Clients.SwapsApi;
 using Huobi.Net.Objects.Models.Swaps;
+using Newtonsoft.Json;
 
 namespace Huobi.Net.Clients.FuturesApi
 {
@@ -18,6 +21,7 @@ namespace Huobi.Net.Clients.FuturesApi
         private const string BalancesEndpoint = "swap_account_info";
         private const string PositionsEndpoint = "swap_position_info";
         private const string SubAccountBalancesEndpoint = "swap_sub_account_info";
+        private const string TransferEndpoint = "account/transfer";
 
         private readonly HuobiClientSwapsCoinApi _baseClient;
 
@@ -54,6 +58,20 @@ namespace Huobi.Net.Clients.FuturesApi
             parameters.AddOptionalParameter("symbol", symbol);
 
             return await _baseClient.SendHuobiFuturesRequest<IEnumerable<HuobiSwapsBalance>>(_baseClient.GetUrl(SubAccountBalancesEndpoint, Api, "1"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        public async Task<WebCallResult<long>> TransferBetweenSpotAndFutures(CoinSwapTransferType from, CoinSwapTransferType to, string asset, decimal quantity, CancellationToken ct = default)
+        {
+            var parameters = new Dictionary<string, object>
+            {
+                { "type", JsonConvert.SerializeObject(from, new UsdtSwapTransferTypeConverter(false)) },
+                { "to", JsonConvert.SerializeObject(to, new UsdtSwapTransferTypeConverter(false)) },
+                { "currency", asset },
+                { "amount", quantity.ToString(CultureInfo.InvariantCulture) },
+            };
+
+            return await _baseClient.SendHuobiFuturesRequest<long>(_baseClient.GetUrl(TransferEndpoint, "2"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
         }
     }
 }
