@@ -146,6 +146,9 @@
         <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiAccount.GetSubAccountBalancesCrossAsync(System.Int64,System.String,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiAccount.TransferBetweenSpotAndUsdtSwap(Huobi.Net.Enums.Futures.UsdtSwapTransferType,Huobi.Net.Enums.Futures.UsdtSwapTransferType,System.String,System.Decimal,System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
         <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiExchangeData">
             <inheritdoc />
         </member>
@@ -935,6 +938,21 @@
             Liquidate short positions
             </summary>
         </member>
+        <member name="T:Huobi.Net.Enums.Futures.UsdtSwapTransferType">
+            <summary>
+            Transfer type
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.UsdtSwapTransferType.Spot">
+            <summary>
+            Spot
+            </summary>
+        </member>
+        <member name="F:Huobi.Net.Enums.Futures.UsdtSwapTransferType.LinearSwap">
+            <summary>
+            Linear Swap
+            </summary>
+        </member>
         <member name="T:Huobi.Net.Enums.InstrumentStatus">
             <summary>
             Status of an instrument
@@ -1496,6 +1514,7 @@
         <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiAccount.TransferBetweenSpotAndFutures(System.String,System.Decimal,Huobi.Net.Enums.Futures.FutureTransferType,System.Threading.CancellationToken)">
             <summary>
             Transfer margin between spot and futures account
+            <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#transfer-margin-between-spot-account-and-future-account" /></para>
             </summary>
             <param name="asset">The asset to transfer</param>
             <param name="quantity">The amount to transfer</param>
@@ -1641,6 +1660,19 @@
             </summary>
             <param name="subId">The sub-account id</param>
             <param name="marginAccount">The margin account to query balances for, i.e. "USDT", returns all if null</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiAccount.TransferBetweenSpotAndUsdtSwap(Huobi.Net.Enums.Futures.UsdtSwapTransferType,Huobi.Net.Enums.Futures.UsdtSwapTransferType,System.String,System.Decimal,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Transfer margin between spot and futures account
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#general-transfer-margin-between-spot-account-and-usdt-margined-contracts-account" /></para>
+            </summary>
+            <param name="from">The account to transfer from</param>
+            <param name="to">The account to transfer to</param>
+            <param name="asset">The asset to transfer</param>
+            <param name="quantity">The amount to transfer</param>
+            <param name="marginAccount">The margin account. For isolated margins, it should look something like "BTC-USDT", and for cross margin it should be something like "USDT"</param>
             <param name="ct">Cancellation token</param>
             <returns></returns>
         </member>
