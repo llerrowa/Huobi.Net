@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using CryptoExchange.Net.Objects;
+using Huobi.Net.Enums.Futures;
 using Huobi.Net.Objects.Models.Futures;
 
 namespace Huobi.Net.Interfaces.Clients.FuturesApi
@@ -39,5 +40,16 @@ namespace Huobi.Net.Interfaces.Clients.FuturesApi
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<IEnumerable<HuobiFuturesBalance>>> GetSubAccountBalancesAsync(long subId, string? symbol = null, CancellationToken ct = default);
+
+        /// <summary>
+        /// Transfer margin between spot and futures account
+        /// <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#transfer-margin-between-spot-account-and-future-account" /></para>
+        /// </summary>
+        /// <param name="asset">The asset to transfer</param>
+        /// <param name="quantity">The amount to transfer</param>
+        /// <param name="transferType">The direction of the transfer</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns></returns>
+        Task<WebCallResult<long>> TransferBetweenSpotAndFutures(string asset, decimal quantity, FutureTransferType transferType, CancellationToken ct = default);
     }
 }
