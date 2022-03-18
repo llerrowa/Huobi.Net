@@ -21,7 +21,7 @@ namespace Huobi.Net.UnitTests
         public async Task ReceivingErrorResponse_Should_FailCall()
         {
             // arrange
-            var client = TestHelpers.CreateAuthResponseClient("{{\"status\": \"error\", \"err-code\": \"Error!\", \"err-msg\": \"ErrorMessage\"}}");
+            var client = TestHelpers.CreateAuthResponseClient($"{{\"status\": \"error\", \"err-code\": \"Error!\", \"err-msg\": \"Error message\"}}");
 
             // act
             var result = await client.SpotApi.ExchangeData.GetAssetsAsync();
