@@ -105,7 +105,7 @@ namespace Huobi.Net.Interfaces.Clients.SpotApi
         /// <param name="to">The account to transfer to</param>
         /// <param name="asset">The asset to transfer</param>
         /// <param name="quantity">The amount to transfer</param>
-        /// <param name="marginAccount">The margin account, for USDT-M only. For isolated margins, it should look something like "BTC-USDT", and for cross margin it should be something like "USDT"</param>
+        /// <param name="marginAccount">The margin account, for USDT-M only, required. For isolated margins, it should look something like "BTC-USDT", and for cross margin it should be something like "USDT"</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<long>> TransferBetweenSpotAndSwap(UsdtSwapTransferType from, UsdtSwapTransferType to, string asset, decimal quantity, string marginAccount, CancellationToken ct = default);

@@ -135,16 +135,16 @@ namespace Huobi.Net.Clients.SpotApi
         }
 
         /// <inheritdoc />
-        public async Task<WebCallResult<long>> TransferBetweenSpotAndSwap(UsdtSwapTransferType from, UsdtSwapTransferType to, string asset, decimal quantity, string marginAccount, CancellationToken ct = default)
+        public async Task<WebCallResult<long>> TransferBetweenSpotAndSwap(UsdtSwapTransferType from, UsdtSwapTransferType to, string asset, decimal quantity, string? marginAccount = null, CancellationToken ct = default)
         {
             var parameters = new Dictionary<string, object>
             {
                 { "type", JsonConvert.SerializeObject(from, new UsdtSwapTransferTypeConverter(false)) },
                 { "to", JsonConvert.SerializeObject(to, new UsdtSwapTransferTypeConverter(false)) },
                 { "currency", asset },
-                { "amount", quantity.ToString(CultureInfo.InvariantCulture) },
-                { "margin-account", marginAccount }
+                { "amount", quantity.ToString(CultureInfo.InvariantCulture) }
             };
+            parameters.AddOptionalParameter("margin-account", marginAccount);
 
             return await _baseClient.SendHuobiRequest<long>(_baseClient.GetUrl(TransferSwapsEndpoint, "2"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
         }
