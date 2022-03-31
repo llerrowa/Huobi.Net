@@ -102,12 +102,12 @@ namespace Huobi.Net.Clients.SpotApi
         {
             var parameters = new Dictionary<string, object>()
             {
-                { "from-account-id", fromAccountId.ToString(CultureInfo.InvariantCulture)},
-                { "from-user", fromUserId.ToString(CultureInfo.InvariantCulture)},
+                { "from-account", fromAccountId},
+                { "from-user", fromUserId},
                 { "from-account-type", JsonConvert.SerializeObject(fromAccountType, new AccountTypeConverter(false))},
 
-                { "to-account-id", toAccountId.ToString(CultureInfo.InvariantCulture)},
-                { "to-user", toUserId.ToString(CultureInfo.InvariantCulture)},
+                { "to-account", toAccountId},
+                { "to-user", toUserId},
                 { "to-account-type", JsonConvert.SerializeObject(toAccountType, new AccountTypeConverter(false))},
 
                 { "currency", asset },
