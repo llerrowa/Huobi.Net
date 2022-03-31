@@ -10,8 +10,12 @@
         /// </summary>
         Spot,
         /// <summary>
-        /// Linear Swap
+        /// USDT-M account
         /// </summary>
-        LinearSwap
+        LinearSwap,
+        /// <summary>
+        /// Coin-M Swap account
+        /// </summary>
+        Swap
     }
 }

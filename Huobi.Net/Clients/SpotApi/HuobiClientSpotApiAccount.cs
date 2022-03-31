@@ -12,6 +12,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Huobi.Net.Objects.Models;
 using CryptoExchange.Net.Converters;
+using Huobi.Net.Converters.Futures;
+using Huobi.Net.Enums.Futures;
 using Huobi.Net.Interfaces.Clients.SpotApi;
 
 namespace Huobi.Net.Clients.SpotApi
@@ -26,6 +28,8 @@ namespace Huobi.Net.Clients.SpotApi
         private const string GetAccountsEndpoint = "account/accounts";
         private const string GetAssetValuationEndpoint = "account/asset-valuation";
         private const string TransferAssetValuationEndpoint = "account/transfer";
+        private const string TransferFuturesEndpoint = "futures/transfer";
+        private const string TransferSwapsEndpoint = "account/transfer";
         private const string GetBalancesEndpoint = "account/accounts/{}/balance";
         private const string GetAccountHistoryEndpoint = "account/history";
         private const string GetLedgerEndpoint = "account/ledger";
@@ -115,6 +119,34 @@ namespace Huobi.Net.Clients.SpotApi
             };
 
             return await _baseClient.SendHuobiRequest<HuobiTransactionResult>(_baseClient.GetUrl(TransferAssetValuationEndpoint, "1"), HttpMethod.Post, ct, parameters, signed: true).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        public async Task<WebCallResult<long>> TransferBetweenSpotAndFutures(string asset, decimal quantity, FutureTransferType transferType, CancellationToken ct = default)
+        {
+            var parameters = new Dictionary<string, object>
+            {
+                { "currency", asset },
+                { "amount", quantity.ToString(CultureInfo.InvariantCulture) },
+                { "type", JsonConvert.SerializeObject(transferType, new FutureTransferTypeConverter(false)) }
+            };
+
+            return await _baseClient.SendHuobiRequest<long>(_baseClient.GetUrl(TransferFuturesEndpoint, "1"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        public async Task<WebCallResult<long>> TransferBetweenSpotAndSwap(UsdtSwapTransferType from, UsdtSwapTransferType to, string asset, decimal quantity, string marginAccount, CancellationToken ct = default)
+        {
+            var parameters = new Dictionary<string, object>
+            {
+                { "type", JsonConvert.SerializeObject(from, new UsdtSwapTransferTypeConverter(false)) },
+                { "to", JsonConvert.SerializeObject(to, new UsdtSwapTransferTypeConverter(false)) },
+                { "currency", asset },
+                { "amount", quantity.ToString(CultureInfo.InvariantCulture) },
+                { "margin-account", marginAccount }
+            };
+
+            return await _baseClient.SendHuobiRequest<long>(_baseClient.GetUrl(TransferSwapsEndpoint, "2"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
         }
 
         /// <inheritdoc />

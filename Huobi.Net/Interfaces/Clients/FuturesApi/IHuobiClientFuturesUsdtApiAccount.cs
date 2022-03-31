@@ -67,18 +67,5 @@ namespace Huobi.Net.Interfaces.Clients.FuturesApi
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<IEnumerable<HuobiFuturesUsdtCrossBalance>>> GetSubAccountBalancesCrossAsync(long subId, string? marginAccount = null, CancellationToken ct = default);
-
-        /// <summary>
-        /// Transfer margin between spot and futures account
-        /// <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#general-transfer-margin-between-spot-account-and-usdt-margined-contracts-account" /></para>
-        /// </summary>
-        /// <param name="from">The account to transfer from</param>
-        /// <param name="to">The account to transfer to</param>
-        /// <param name="asset">The asset to transfer</param>
-        /// <param name="quantity">The amount to transfer</param>
-        /// <param name="marginAccount">The margin account. For isolated margins, it should look something like "BTC-USDT", and for cross margin it should be something like "USDT"</param>
-        /// <param name="ct">Cancellation token</param>
-        /// <returns></returns>
-        Task<WebCallResult<long>> TransferBetweenSpotAndUsdtSwap(UsdtSwapTransferType from, UsdtSwapTransferType to, string asset, decimal quantity, string marginAccount, CancellationToken ct = default);
     }
 }

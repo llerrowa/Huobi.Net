@@ -13,7 +13,8 @@ namespace Huobi.Net.Converters.Futures
         protected override List<KeyValuePair<UsdtSwapTransferType, string>> Mapping => new List<KeyValuePair<UsdtSwapTransferType, string>>
         {
             new KeyValuePair<UsdtSwapTransferType, string>(UsdtSwapTransferType.Spot, "spot"),
-            new KeyValuePair<UsdtSwapTransferType, string>(UsdtSwapTransferType.LinearSwap, "linear-swap")
+            new KeyValuePair<UsdtSwapTransferType, string>(UsdtSwapTransferType.LinearSwap, "linear-swap"),
+            new KeyValuePair<UsdtSwapTransferType, string>(UsdtSwapTransferType.Swap, "swap")
         };
     }
 }

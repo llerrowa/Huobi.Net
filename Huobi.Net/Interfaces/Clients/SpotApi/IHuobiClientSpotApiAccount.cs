@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Huobi.Net.Enums.Futures;
 using Huobi.Net.Objects.Models;
 
 namespace Huobi.Net.Interfaces.Clients.SpotApi
@@ -82,6 +83,32 @@ namespace Huobi.Net.Interfaces.Clients.SpotApi
         /// <returns></returns>
         Task<WebCallResult<HuobiTransactionResult>> TransferAssetAsync(long fromUserId, AccountType fromAccountType, long fromAccountId,
             long toUserId, AccountType toAccountType, long toAccountId, string asset, decimal quantity, CancellationToken ct = default);
+
+        /// <summary>
+        /// Transfer margin between spot and futures account
+        /// <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#transfer-margin-between-spot-account-and-future-account" /></para>
+        /// </summary>
+        /// <param name="asset">The asset to transfer</param>
+        /// <param name="quantity">The amount to transfer</param>
+        /// <param name="transferType">The direction of the transfer</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns></returns>
+        Task<WebCallResult<long>> TransferBetweenSpotAndFutures(string asset, decimal quantity, FutureTransferType transferType, CancellationToken ct = default);
+
+        /// <summary>
+        /// Transfer margin between spot and swap account (USDT-M and Coin-M Swaps)
+        /// <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#general-transfer-margin-between-spot-account-and-usdt-margined-contracts-account" /></para>
+        /// <para><a href="https://docs.huobigroup.com/docs/coin_margined_swap/v1/en/#transfer-margin-between-spot-account-and-coin-margined-swap-account" /></para>
+        /// <para>(Yes, it's the same endpoint but all over the place)</para>
+        /// </summary>
+        /// <param name="from">The account to transfer from</param>
+        /// <param name="to">The account to transfer to</param>
+        /// <param name="asset">The asset to transfer</param>
+        /// <param name="quantity">The amount to transfer</param>
+        /// <param name="marginAccount">The margin account, for USDT-M only. For isolated margins, it should look something like "BTC-USDT", and for cross margin it should be something like "USDT"</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns></returns>
+        Task<WebCallResult<long>> TransferBetweenSpotAndSwap(UsdtSwapTransferType from, UsdtSwapTransferType to, string asset, decimal quantity, string marginAccount, CancellationToken ct = default);
 
         /// <summary>
         /// Gets a list of balance changes of specified user's account
