@@ -139,7 +139,7 @@ namespace Huobi.Net.Clients.SpotApi
         {
             var parameters = new Dictionary<string, object>
             {
-                { "type", JsonConvert.SerializeObject(from, new UsdtSwapTransferTypeConverter(false)) },
+                { "from", JsonConvert.SerializeObject(from, new UsdtSwapTransferTypeConverter(false)) },
                 { "to", JsonConvert.SerializeObject(to, new UsdtSwapTransferTypeConverter(false)) },
                 { "currency", asset },
                 { "amount", quantity.ToString(CultureInfo.InvariantCulture) }
