@@ -55,8 +55,6 @@ namespace Huobi.Net.Clients
         /// </summary>
         public HuobiClient(HuobiClientOptions options) : base("Huobi", options)
         {
-            manualParseError = true;
-
             SpotApi = AddApiClient(new HuobiClientSpotApi(log, this, options));
             FuturesCoinApi = AddApiClient(new HuobiClientFuturesCoinApi(log, this, options));
             SwapsCoinApi = AddApiClient(new HuobiClientSwapsCoinApi(log, this, options));
