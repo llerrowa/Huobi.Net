@@ -16,6 +16,7 @@ namespace Huobi.Net.Clients.FuturesApi
         private const string BalancesEndpoint = "contract_account_info";
         private const string PositionsEndpoint = "contract_position_info";
         private const string SubAccountBalancesEndpoint = "contract_sub_account_info";
+        private const string SubAccountPositionsEndpoint = "contract_sub_position_info";
 
         private readonly HuobiClientFuturesCoinApi _baseClient;
 
@@ -52,6 +53,18 @@ namespace Huobi.Net.Clients.FuturesApi
             parameters.AddOptionalParameter("symbol", symbol);
 
             return await _baseClient.SendHuobiFuturesRequest<IEnumerable<HuobiFuturesBalance>>(_baseClient.GetUrl(SubAccountBalancesEndpoint, "1"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        public async Task<WebCallResult<IEnumerable<HuobiFuturesPosition>>> GetSubAccountPositionsAsync(long subId, string? symbol = null, CancellationToken ct = default)
+        {
+            var parameters = new Dictionary<string, object>
+            {
+                { "sub_uid", subId.ToString(CultureInfo.InvariantCulture)}
+            };
+            parameters.AddOptionalParameter("symbol", symbol);
+
+            return await _baseClient.SendHuobiFuturesRequest<IEnumerable<HuobiFuturesPosition>>(_baseClient.GetUrl(SubAccountPositionsEndpoint, "1"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
         }
     }
 }

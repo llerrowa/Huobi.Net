@@ -38,5 +38,15 @@ namespace Huobi.Net.Interfaces.Clients.SwapsApi
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<IEnumerable<HuobiSwapsBalance>>> GetSubAccountBalancesAsync(long subId, string? symbol = null, CancellationToken ct = default);
+
+        /// <summary>
+        /// Gets a list of positions for a sub-account
+        /// <para><a href="https://huobiapi.github.io/docs/coin_margined_swap/v1/en/#query-a-single-sub-account-39-s-position-information" /></para>
+        /// </summary>
+        /// <param name="subId">The sub-account id</param>
+        /// <param name="symbol">Contract code - both uppercase and lowercase supported</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns></returns>
+        Task<WebCallResult<IEnumerable<HuobiSwapsPosition>>> GetSubAccountPositionsAsync(long subId, string? symbol = null, CancellationToken ct = default);
     }
 }

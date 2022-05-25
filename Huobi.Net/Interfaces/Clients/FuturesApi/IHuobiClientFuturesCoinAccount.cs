@@ -39,5 +39,15 @@ namespace Huobi.Net.Interfaces.Clients.FuturesApi
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<IEnumerable<HuobiFuturesBalance>>> GetSubAccountBalancesAsync(long subId, string? symbol = null, CancellationToken ct = default);
+
+        /// <summary>
+        /// Gets a list of positions for a sub-account
+        /// <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#query-a-single-sub-account-39-s-position-information-2" /></para>
+        /// </summary>
+        /// <param name="subId">The sub-account id</param>
+        /// <param name="symbol">The id of the account to get the positions for</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns></returns>
+        Task<WebCallResult<IEnumerable<HuobiFuturesPosition>>> GetSubAccountPositionsAsync(long subId, string? symbol = null, CancellationToken ct = default);
     }
 }
