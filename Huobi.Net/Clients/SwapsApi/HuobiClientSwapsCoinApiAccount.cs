@@ -18,6 +18,7 @@ namespace Huobi.Net.Clients.FuturesApi
         private const string BalancesEndpoint = "swap_account_info";
         private const string PositionsEndpoint = "swap_position_info";
         private const string SubAccountBalancesEndpoint = "swap_sub_account_info";
+        private const string SubAccountPositionsEndpoint = "swap_sub_position_info";
 
         private readonly HuobiClientSwapsCoinApi _baseClient;
 
@@ -39,7 +40,7 @@ namespace Huobi.Net.Clients.FuturesApi
         public async Task<WebCallResult<IEnumerable<HuobiSwapsPosition>>> GetPositionsAsync(string? symbol = null, CancellationToken ct = default)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.AddOptionalParameter("symbol", symbol);
+            parameters.AddOptionalParameter("contract_code", symbol);
 
             return await _baseClient.SendHuobiFuturesRequest<IEnumerable<HuobiSwapsPosition>>(_baseClient.GetUrl(PositionsEndpoint, Api, "1"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
         }
@@ -54,6 +55,18 @@ namespace Huobi.Net.Clients.FuturesApi
             parameters.AddOptionalParameter("symbol", symbol);
 
             return await _baseClient.SendHuobiFuturesRequest<IEnumerable<HuobiSwapsBalance>>(_baseClient.GetUrl(SubAccountBalancesEndpoint, Api, "1"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<WebCallResult<IEnumerable<HuobiSwapsPosition>>> GetSubAccountPositionsAsync(long subId, string? symbol = null, CancellationToken ct = default)
+        {
+            var parameters = new Dictionary<string, object>
+            {
+                { "sub_uid", subId.ToString(CultureInfo.InvariantCulture)}
+            };
+            parameters.AddOptionalParameter("contract_code", symbol);
+
+            return await _baseClient.SendHuobiFuturesRequest<IEnumerable<HuobiSwapsPosition>>(_baseClient.GetUrl(SubAccountPositionsEndpoint, Api, "1"), HttpMethod.Post, ct, parameters, true, weight: 1).ConfigureAwait(false);
         }
     }
 }

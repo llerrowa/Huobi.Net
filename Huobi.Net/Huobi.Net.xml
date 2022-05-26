@@ -61,6 +61,9 @@
         <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiAccount.GetSubAccountBalancesAsync(System.Int64,System.String,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiAccount.GetSubAccountPositionsAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
         <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesCoinApiExchangeData">
             <inheritdoc />
         </member>
@@ -143,6 +146,12 @@
         <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiAccount.GetSubAccountBalancesCrossAsync(System.Int64,System.String,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiAccount.GetSubAccountPositionsIsolatedAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiAccount.GetSubAccountPositionsCrossAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
         <member name="T:Huobi.Net.Clients.FuturesApi.HuobiClientFuturesUsdtApiExchangeData">
             <inheritdoc />
         </member>
@@ -169,6 +178,9 @@
         </member>
         <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientSwapsCoinApiAccount.GetSubAccountBalancesAsync(System.Int64,System.String,System.Threading.CancellationToken)">
             <inheritdoc />
+        </member>
+        <member name="M:Huobi.Net.Clients.FuturesApi.HuobiClientSwapsCoinApiAccount.GetSubAccountPositionsAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
         </member>
         <member name="T:Huobi.Net.Clients.HuobiClient">
             <inheritdoc cref="T:Huobi.Net.Interfaces.Clients.IHuobiClient" />
@@ -1516,6 +1528,16 @@
             <param name="ct">Cancellation token</param>
             <returns></returns>
         </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApiAccount.GetSubAccountPositionsAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of positions for a sub-account
+            <para><a href="https://huobiapi.github.io/docs/dm/v1/en/#query-a-single-sub-account-39-s-position-information-2" /></para>
+            </summary>
+            <param name="subId">The sub-account id</param>
+            <param name="symbol">The id of the account to get the positions for</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
         <member name="T:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesCoinApi">
             <summary>
             COIN-M futures API endpoints
@@ -1654,6 +1676,26 @@
             </summary>
             <param name="subId">The sub-account id</param>
             <param name="marginAccount">The margin account to query balances for, i.e. "USDT", returns all if null</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiAccount.GetSubAccountPositionsIsolatedAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of balances for a sub-account
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#isolated-query-a-single-sub-account-39-s-assets-information" /></para>
+            </summary>
+            <param name="subId">The sub-account id</param>
+            <param name="contractCode">The contract code to query positions for, returns all if null</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.FuturesApi.IHuobiClientFuturesUsdtApiAccount.GetSubAccountPositionsCrossAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of balances for a sub-account
+            <para><a href="https://huobiapi.github.io/docs/usdt_swap/v1/en/#cross-query-a-sub-account-39-s-position-information" /></para>
+            </summary>
+            <param name="subId">The sub-account id</param>
+            <param name="contractCode">The margin account to query positions for, i.e. "USDT", returns all if null</param>
             <param name="ct">Cancellation token</param>
             <returns></returns>
         </member>
@@ -2453,6 +2495,16 @@
             </summary>
             <param name="subId">The sub-account id</param>
             <param name="symbol">The id of the account to get the balances for</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Huobi.Net.Interfaces.Clients.SwapsApi.IHuobiClientSwapsCoinApiAccount.GetSubAccountPositionsAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of positions for a sub-account
+            <para><a href="https://huobiapi.github.io/docs/coin_margined_swap/v1/en/#query-a-single-sub-account-39-s-position-information" /></para>
+            </summary>
+            <param name="subId">The sub-account id</param>
+            <param name="symbol">Contract code - both uppercase and lowercase supported</param>
             <param name="ct">Cancellation token</param>
             <returns></returns>
         </member>
